@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grid } from '@material-ui/core';
+import NavBar from './NavBar';
+import Landing from './Landing';
+import AboutUs from './AboutUs'
+import coffee from './Images/SideIMG/Coffee.png'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Grid container direction = "column" style = {{background: 'linear-gradient(to bottom, #FFFFFF, #EAE7DC)', overflow: 'hidden'}}>
+      <Grid item >
+        <NavBar />
+      </Grid>
+      <Grid item>
+        <Landing  />
+      </Grid>
+      <Grid item>
+        <AboutUs />
+      </Grid>
+    </Grid>
+  )
 }
 
-export default App;
