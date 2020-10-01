@@ -1,23 +1,30 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
 import NavBar from './NavBar';
 import Landing from './Landing';
-import AboutUs from './AboutUs'
-import coffee from './Images/SideIMG/Coffee.png'
+import AboutUs from './AboutUs';
+import { makeStyles } from '@material-ui/core/styles'
+import CoffeeRotated from './Images/SideIMG/CoffeeRotated.png'
+
+const useStyles = makeStyles({
+  background: {
+    background: 'url(' + CoffeeRotated + '), linear-gradient(to bottom, #FFFFFF, #EAE7DC)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain'
+  }
+})
 
 export default function App() {
+
+  const classes = useStyles();
+
   return (
-    <Grid container direction = "column" style = {{background: 'linear-gradient(to bottom, #FFFFFF, #EAE7DC)', overflow: 'hidden'}}>
-      <Grid item >
+    <div 
+    className = {classes.background}
+    >
         <NavBar />
-      </Grid>
-      <Grid item>
         <Landing  />
-      </Grid>
-      <Grid item>
         <AboutUs />
-      </Grid>
-    </Grid>
+    </div>
   )
 }
 

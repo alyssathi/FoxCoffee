@@ -13,10 +13,10 @@ const theme = createMuiTheme({
         color: '#EE8845'},
         h2: {
             textTransform: 'uppercase',
-            fontSize: '2rem'
+            fontSize: '1.85rem'
         },
         h3: {
-            fontSize: '1.75rem'
+            fontSize: '1.65rem'
         }
     }
 })
