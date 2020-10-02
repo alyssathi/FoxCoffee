@@ -1,4 +1,3 @@
-import { Typography } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
@@ -9,14 +8,20 @@ const theme = createMuiTheme({
                 secondary: '#EE8845',}
     },
     typography: {
-        h1: {textTransform: "uppercase",
-        color: '#EE8845'},
+        h1: {
+            textTransform: "uppercase",
+            color: '#EE8845'},
         h2: {
             textTransform: 'uppercase',
             fontSize: '1.85rem'
         },
         h3: {
             fontSize: '1.65rem'
+        },
+        h4: {
+            fontSize: '3rem',
+            textTransform: 'uppercase',
+            color: '#EE8845',
         }
     }
 })

@@ -3,7 +3,7 @@ import { Grid, Typography } from '@material-ui/core'
 
 export default function Landing() {
     const section = {
-        height: '100vh',
+        height: '90vh',
         textAlign: 'center',
         overflow: 'hidden',
       }

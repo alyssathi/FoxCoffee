@@ -7,7 +7,7 @@ import CoffeeRotated from './Images/SideIMG/CoffeeRotated.png'
 
 const useStyles = makeStyles({
   background: {
-    background: 'url(' + CoffeeRotated + '), linear-gradient(to bottom, #FFFFFF, #EAE7DC)',
+    background: 'url(' + CoffeeRotated + '), linear-gradient(to bottom, #FFFFFF, #D8C3A5)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain'
   }
