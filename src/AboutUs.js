@@ -12,18 +12,13 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center'
       },
     containerStyle: {
-        margin: '50px 0',
         padding: '20px',
-        width: '90vw',
-        boxShadow: '0px 0px 10px 10px #c2b39f',
-        borderRadius: '1rem',
-        background: 'linear-gradient(to bottom, #EAE7DC, #D8C3A5),',
+        width: '100vw',
         justifyContent: 'center'
      },
     imageStyle: {
         height: 'auto',
         width: '100%',
-        borderRadius: '1rem', 
         [theme.breakpoints.down('sm')]:{
             transform: 'rotate(90deg)',
             width: '70%'
@@ -31,7 +26,8 @@ const useStyles = makeStyles(theme => ({
     },
     typographyStyle:{
         [theme.breakpoints.up('lg')]: {
-            fontSize: '1.3rem'
+            fontSize: '1.3rem',
+            textAlign: 'left',
         }
     }
 
@@ -64,4 +60,3 @@ export default function AboutUs() {
         </div>
     )
 }
-

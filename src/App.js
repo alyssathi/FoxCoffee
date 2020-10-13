@@ -3,11 +3,11 @@ import NavBar from './NavBar';
 import Landing from './Landing';
 import AboutUs from './AboutUs';
 import { makeStyles } from '@material-ui/core/styles'
-import CoffeeRotated from './Images/SideIMG/CoffeeRotated.png'
+import ShopNow from './ShopNow';
 
 const useStyles = makeStyles({
   background: {
-    background: 'url(' + CoffeeRotated + '), linear-gradient(to bottom, #FFFFFF, #D8C3A5)',
+    background: 'linear-gradient(to bottom, #FFFFFF, #D8C3A5)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain'
   }
@@ -24,6 +24,7 @@ export default function App() {
         <NavBar />
         <Landing  />
         <AboutUs />
+        <ShopNow />
     </div>
   )
 }
