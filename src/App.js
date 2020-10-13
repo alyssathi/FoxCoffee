@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from './NavBar';
 import Landing from './Landing';
 import AboutUs from './AboutUs';
+import Learn from './Learn';
 import { makeStyles } from '@material-ui/core/styles'
 import ShopNow from './ShopNow';
 
@@ -25,6 +26,7 @@ export default function App() {
         <Landing  />
         <AboutUs />
         <ShopNow />
+        <Learn />
     </div>
   )
 }

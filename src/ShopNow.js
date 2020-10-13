@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         height: '60vh',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
       },
     containerStyle: {
         margin: '20px 0 20px 0',
@@ -22,7 +22,15 @@ const useStyles = makeStyles(theme => ({
      contentStyle: {
         display: 'flex',
         flexDirection: 'column',
-        padding: '30px'
+        padding: '30px',
+        [theme.breakpoints.down('xs')]:{
+            textAlign: 'center',
+            background: 'url(' + CoffeeIMG + ')',
+            borderRadius: '1rem',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+        }
      },
     BGimageStyle: {
         height: 'auto',
@@ -30,14 +38,23 @@ const useStyles = makeStyles(theme => ({
         background: 'url(' + CoffeeIMG + ')',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        borderRadius: '0 1rem 1rem 0'
+        backgroundPosition: 'center',
+        borderRadius: '0 1rem 1rem 0',
+        [theme.breakpoints.down('xs')]:{
+            display: 'none',
+        }
     },
     typographyStyle:{
         margin: '30px 0 30px 0',
         [theme.breakpoints.up('lg')]: {
             fontSize: '1.3rem',
             textAlign: 'left',
-        }}
+        },
+        [theme.breakpoints.down('xs')]:{
+            color: 'white'
+        }
+    
+    }
   }))
 
 export default function AboutUs() {
@@ -46,7 +63,7 @@ export default function AboutUs() {
     return (
         <div className = {classes.section}>
             <Grid container  className = {classes.containerStyle} direction= "row">
-                <Grid item xs= {12} md ={6} className= {classes.contentStyle}>
+                <Grid item xs= {12} sm ={6} className= {classes.contentStyle}>
                     <Typography variant='h4'>
                        Shop Online
                     </Typography>
@@ -55,7 +72,7 @@ export default function AboutUs() {
                     </Typography>
                     <Button size= 'large'>Shop Now</Button>
                 </Grid>
-                <Grid item md= {6} className= {classes.BGimageStyle}>
+                <Grid item sm = {6} className= {classes.BGimageStyle}>
                 </Grid>
             </Grid>
         </div>
