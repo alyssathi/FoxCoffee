@@ -23,7 +23,7 @@ export default function Landing() {
       const classes = useStyles();
 
     return (
-        <Grid container justify= "center"
+        <Grid container id = 'Landing' justify= "center"
         alignItems="center"
         style = {section} className = {classes.background}>
         

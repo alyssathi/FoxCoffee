@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
       },
     containerStyle: {
         padding: '20px',
@@ -37,7 +37,7 @@ export default function AboutUs() {
     const classes = useStyles();
 
     return (
-        <div className = {classes.section}>
+        <div id = 'AboutUs' className = {classes.section}>
             <Grid container spacing={3} className = {classes.containerStyle} direction= "row">
                 <Grid item xs= {12} style = {{display: 'flex'}}>
                     <Typography variant='h4'>

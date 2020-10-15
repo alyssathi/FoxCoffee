@@ -3,8 +3,9 @@ import NavBar from './NavBar';
 import Landing from './Landing';
 import AboutUs from './AboutUs';
 import Learn from './Learn';
-import { makeStyles } from '@material-ui/core/styles'
 import ShopNow from './ShopNow';
+import { makeStyles } from '@material-ui/core/styles';
+import Contact from './Contact';
 
 const useStyles = makeStyles({
   background: {
@@ -27,6 +28,7 @@ export default function App() {
         <AboutUs />
         <ShopNow />
         <Learn />
+        <Contact />
     </div>
   )
 }

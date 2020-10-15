@@ -1,8 +1,13 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, Button, IconButton, Grid } from '@material-ui/core'
+import { AppBar, Toolbar, Typography, Button, IconButton, Grid, useMediaQuery } from '@material-ui/core'
+import { useTheme } from '@material-ui/core/styles'
 import FoxCoffee from './Icons/FoxCoffee.png'
+import { Link } from 'react-scroll';
 
 export default function NavBar() {
+    const theme = useTheme();
+    const smallScreen = useMediaQuery(theme.breakpoints.down('sm'))
+
     return (
         <AppBar position="fixed" style = {{
             backgroundColor: '#EAE7DCE6',
@@ -13,22 +18,58 @@ export default function NavBar() {
                 alignItems="center" >
                     <Grid item>
                         <Button color="inherit"
-                       >Shop</Button>
+                       >Shop</Button>  
                     </Grid>
                     <Grid item>
-                        <Button color="inherit"
-                        >About Us</Button>
+                    <Link
+                            to="AboutUs"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                            offset= {-75}
+                        >
+                        <Button>
+                        About Us
+                        </Button>
+                    </Link>
                     </Grid>
-                    <IconButton edge="start" color="inherit" aria-label="menu">
+                    <Grid item>
+                    <Link
+                        to="Landing"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        >
+                        <IconButton edge="start" color="inherit" aria-label="menu">
                     <img src={FoxCoffee} alt = 'FoxCoffee Logo' style = {{height: "70px" }}/>
                     </IconButton>
-                    <Grid item>
-                        <Button color="inherit"
-                        >Learn</Button>
+                    </Link>
                     </Grid>
                     <Grid item>
-                        <Button color="inherit"
-                        >Contact</Button>
+                    <Link
+                        to="Learn"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        offset= {-95}
+                        >
+                        <Button>
+                        Learn
+                        </Button>
+                    </Link>
+                    </Grid>
+                    <Grid item>
+                    <Link
+                        to="Contact"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        offset= {-75}
+                        >
+                        <Button>
+                        Contact
+                        </Button>
+                    </Link>
                     </Grid>
                 </Grid>
             </Toolbar>

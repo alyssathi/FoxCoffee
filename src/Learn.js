@@ -42,7 +42,7 @@ export default function AboutUs() {
     const classes = useStyles();
 
     return (
-        <div className = {classes.section}>
+        <div id = 'Learn' className = {classes.section}>
             <Grid container spacing={5} className = {classes.containerStyle} direction= "row">
                 <Grid item xs= {12} md= {4} className = {classes.BGimageStyle}>
                 </Grid>
