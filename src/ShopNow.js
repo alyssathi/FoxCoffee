@@ -5,12 +5,12 @@ import CoffeeIMG from './Images/SideIMG/nathan-dumlao-6VhPY27jdps-unsplash.jpg'
 
 const useStyles = makeStyles(theme => ({
     section: {
-        overflow: 'hidden',
         display: 'flex',
         height: '60vh',
         alignItems: 'center',
         justifyContent: 'center',
-      },
+        marginBottom: '2rem'
+        },
     containerStyle: {
         margin: '20px 0 20px 0',
         width: '80vw',
@@ -44,6 +44,12 @@ const useStyles = makeStyles(theme => ({
             display: 'none',
         }
     },
+    buttonStyle: {
+        [theme.breakpoints.down('xs')]:{
+        background: '#EE8845',
+        color: 'white'
+        }
+    },
     typographyStyle:{
         margin: '30px 0 30px 0',
         [theme.breakpoints.up('lg')]: {
@@ -53,7 +59,11 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('xs')]:{
             color: 'white'
         }
-    
+    },
+    typographyStyleSmall:{
+        [theme.breakpoints.down('xs')]:{
+            color: 'white'
+        }
     }
   }))
 
@@ -64,13 +74,13 @@ export default function AboutUs() {
         <div className = {classes.section}>
             <Grid container  className = {classes.containerStyle} direction= "row">
                 <Grid item xs= {12} sm ={6} className= {classes.contentStyle}>
-                    <Typography variant='h4'>
+                    <Typography variant='h4' className= {classes.typographyStyleSmall}>
                        Shop Online
                     </Typography>
                     <Typography className={classes.typographyStyle}>
                     Freshly roasted coffee beans right at your door step. Take a look at our selection and order today.
                     </Typography>
-                    <Button size= 'large'>Shop Now</Button>
+                    <Button size= 'large' className= {classes.buttonStyle}>Shop Now</Button>
                 </Grid>
                 <Grid item sm = {6} className= {classes.BGimageStyle}>
                 </Grid>
