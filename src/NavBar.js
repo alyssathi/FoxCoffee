@@ -1,8 +1,8 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, Button, IconButton, Grid } from '@material-ui/core'
+import { AppBar, Toolbar, Button, IconButton, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import FoxCoffee from './Icons/FoxCoffee.png'
-import { Link } from 'react-scroll';
+import { HashLink } from 'react-router-hash-link';
 
 
 const useStyles = makeStyles(theme => ({
@@ -15,8 +15,18 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('sm')]: {
             display: 'none',
         }
+    },
+    routerLink: {
+        color: 'black',
+        textDecoration: 'none'
     }
 }))
+
+const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -85; 
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+}
 
 export default function NavBar() {
     const classes = useStyles();
@@ -30,71 +40,65 @@ export default function NavBar() {
                 justify= "space-between"
                 alignItems="center" >
                     <Grid item className={classes.appSmall}> 
-                    <Link
-                        to="Landing"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
+                    <HashLink
+                        smooth
+                        to="/home/#Landing"
                         >
                         <IconButton edge="start" color="inherit" aria-label="menu">
                     <img src={FoxCoffee} alt = 'FoxCoffee Logo' style = {{height: "70px" }}/>
                     </IconButton>
-                    </Link>
+                    </HashLink>
                     </Grid>
                     <Grid item>
+                        <HashLink className={classes.routerLink} smooth to = '/shop/#'>
                         <Button color="inherit"
-                       >Shop</Button>  
+                       >Shop</Button> 
+                        </HashLink>
                     </Grid>
                     <Grid item className= {classes.appLarge}>
-                    <Link
-                            to="AboutUs"
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            offset= {-75}
+                    <HashLink smooth 
+                            to= '/home/#AboutUs'
+                            scroll={el => scrollWithOffset(el)}
+                            className={classes.routerLink}
                         >
                         <Button>
                         About Us
                         </Button>
-                    </Link>
+                    </HashLink>
                     </Grid>
                     <Grid item className= {classes.appLarge}>
-                    <Link
-                        to="Landing"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
+                    <HashLink
+                        to="/home/#Landing"
+                        smooth
                         >
                         <IconButton edge="start" color="inherit" aria-label="menu">
                     <img src={FoxCoffee} alt = 'FoxCoffee Logo' style = {{height: "70px" }}/>
                     </IconButton>
-                    </Link>
+                    </HashLink>
                     </Grid>
                     <Grid item className={classes.appLarge}>
-                    <Link
-                        to="Learn"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        offset= {-95}
+                    <HashLink
+                        to="/home/#Learn"
+                        smooth
+                        scroll={el => scrollWithOffset(el)}
+                        className={classes.routerLink}
                         >
                         <Button>
                         Learn
                         </Button>
-                    </Link>
+                    </HashLink>
                     </Grid>
                     <Grid item>
-                    <Link
-                        to="Contact"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        offset= {-75}
+                    <HashLink
+                        to="/home/#Contact"
+                        smooth
+                        scroll={el => scrollWithOffset(el)}
+                        className={classes.routerLink}
                         >
                         <Button>
                         Contact
                         </Button>
-                    </Link>
+                    </HashLink>
                     </Grid>
                 </Grid>
             </Toolbar>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid, Typography, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import CoffeeIMG from './Images/SideIMG/nathan-dumlao-6VhPY27jdps-unsplash.jpg'
+import { HashLink } from 'react-router-hash-link'
 
 const useStyles = makeStyles(theme => ({
     section: {
@@ -45,10 +46,9 @@ const useStyles = makeStyles(theme => ({
         }
     },
     buttonStyle: {
-        [theme.breakpoints.down('xs')]:{
         background: '#EE8845',
-        color: 'white'
-        }
+        color: 'white',
+        padding: '10px 50px 10px 50px' 
     },
     typographyStyle:{
         margin: '30px 0 30px 0',
@@ -64,6 +64,10 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('xs')]:{
             color: 'white'
         }
+    },
+    routerLink: {
+        color: 'black',
+        textDecoration: 'none'
     }
   }))
 
@@ -80,7 +84,13 @@ export default function AboutUs() {
                     <Typography className={classes.typographyStyle}>
                     Freshly roasted coffee beans right at your door step. Take a look at our selection and order today.
                     </Typography>
-                    <Button size= 'large' className= {classes.buttonStyle}>Shop Now</Button>
+                    <HashLink
+                    className={classes.routerLink}
+                    to = '/shop/#'>
+                    <Button size= 'large' className= {classes.buttonStyle}>    
+                        Shop Now
+                    </Button>
+                    </HashLink>
                 </Grid>
                 <Grid item sm = {6} className= {classes.BGimageStyle}>
                 </Grid>

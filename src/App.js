@@ -1,11 +1,10 @@
 import React from 'react';
 import NavBar from './NavBar';
-import Landing from './Landing';
-import AboutUs from './AboutUs';
-import Learn from './Learn';
-import ShopNow from './ShopNow';
+import Shop from './Shop/Shop';
+import Home from './Home'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import Contact from './Contact';
+
 
 const useStyles = makeStyles({
   background: {
@@ -23,12 +22,12 @@ export default function App() {
     <div 
     className = {classes.background}
     >
+      <Router>
         <NavBar />
-        <Landing  />
-        <AboutUs />
-        <ShopNow />
-        <Learn />
-        <Contact />
+        <Route path = '/home' exact component ={Home} />
+        <Route path='/shop' component = {Shop} />
+      </Router>
+        
     </div>
   )
 }
